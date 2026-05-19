@@ -1,0 +1,14 @@
+:root {
+  --omnifix-bg: #09090b;
+  --omnifix-panel: #18181b;
+  --omnifix-surface: #27272a;
+  --omnifix-border: #3f3f46;
+  --omnifix-text: #fafafa;
+  --omnifix-muted: #a1a1aa;
+  --omnifix-primary: #f97316;
+  --omnifix-primary-soft: #fff7ed;
+}
+
+::selection {
+  background: rgba(249, 115, 22, 0.35);
+}

@@ -1,0 +1,38 @@
+@import "./styles/theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #fafafa;
+  background: #09090b;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply rounded-lg border border-zinc-800 bg-zinc-900 shadow-sm shadow-black/20;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs font-semibold uppercase tracking-widest text-orange-400;
+  }
+}

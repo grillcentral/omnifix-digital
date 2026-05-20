@@ -2,6 +2,12 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { AuthContext } from "@/lib/authContext.js";
 import { supabase } from "@/lib/supabase.js";
 
+const VALID_PROFILE_ROLES = new Set(["admin", "tecnico", "atendente"]);
+
+function isValidProfile(profile) {
+  return Boolean(profile?.id && profile?.ativo !== false && VALID_PROFILE_ROLES.has(profile?.role));
+}
+
 export function AuthProvider({ children }) {
   const [session, setSession] = useState(null);
   const [user, setUser] = useState(null);
@@ -25,25 +31,17 @@ export function AuthProvider({ children }) {
 
       if (error) throw error;
 
-      const fallbackProfile = {
-        id: currentUser.id,
-        nome: currentUser.email,
-        role: "atendente",
-        ativo: true,
-      };
-      const nextProfile = data ?? fallbackProfile;
-      setProfile(nextProfile);
-      return nextProfile;
+      if (!isValidProfile(data)) {
+        setProfile(null);
+        return null;
+      }
+
+      setProfile(data);
+      return data;
     } catch (error) {
       console.error("Erro ao carregar profile", error);
-      const fallbackProfile = {
-        id: currentUser.id,
-        nome: currentUser.email,
-        role: "atendente",
-        ativo: true,
-      };
-      setProfile(fallbackProfile);
-      return fallbackProfile;
+      setProfile(null);
+      return null;
     } finally {
       setProfileLoading(false);
     }

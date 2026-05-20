@@ -3,6 +3,7 @@ import FeaturedProducts from "@/components/home/FeaturedProducts.jsx";
 import HeroSection from "@/components/home/HeroSection.jsx";
 import ServicesSection from "@/components/home/ServicesSection.jsx";
 import TestimonialsSection from "@/components/home/TestimonialsSection.jsx";
+import WhatsAppCtaSection from "@/components/home/WhatsAppCtaSection.jsx";
 import WhyUsSection from "@/components/home/WhyUsSection.jsx";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSection />
       <FeaturedProducts />
       <ServicesSection />
+      <WhatsAppCtaSection />
       <WhyUsSection />
       <TestimonialsSection />
       <BlogPreview />

@@ -8,7 +8,7 @@ export default {
           ink: "#09090b",
           panel: "#18181b",
           surface: "#27272a",
-          primary: "#f97316",
+          primary: "#FF5E00",
           accent: "#fb923c",
           soft: "#fff7ed"
         }

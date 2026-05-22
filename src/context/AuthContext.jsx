@@ -5,7 +5,7 @@ import { supabase } from "@/lib/supabase.js";
 const VALID_PROFILE_ROLES = new Set(["admin", "tecnico", "atendente"]);
 
 function isValidProfile(profile) {
-  return Boolean(profile?.id && profile?.ativo !== false && VALID_PROFILE_ROLES.has(profile?.role));
+  return Boolean(profile?.id && profile?.ativo !== false && VALID_PROFILE_ROLES.has(profile?.papel));
 }
 
 export function AuthProvider({ children }) {
@@ -24,7 +24,7 @@ export function AuthProvider({ children }) {
     setProfileLoading(true);
     try {
       const { data, error } = await supabase
-        .from("profiles")
+        .from("perfis")
         .select("*")
         .eq("id", currentUser.id)
         .maybeSingle();

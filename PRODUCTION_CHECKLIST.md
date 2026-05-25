@@ -6,7 +6,7 @@
 - Executar `database/schema.sql` no SQL Editor.
 - Executar `database/seed.sql` se quiser popular produtos, depoimentos e blog.
 - Confirmar tabelas:
-  - `profiles`
+  - `perfis`
   - `ordens_servico`
   - `leads`
   - `estoque`
@@ -16,7 +16,7 @@
   - `products`
 - Confirmar Auth habilitado em `Authentication > Providers > Email`.
 - Criar usuarios internos em `Authentication > Users`.
-- Conferir `profiles` e ajustar `role`:
+- Conferir `perfis` e ajustar `papel`:
   - `admin`
   - `tecnico`
   - `atendente`
@@ -66,7 +66,7 @@ dist
 No PowerShell:
 
 ```powershell
-cd "C:\Progeto Cardapio digital\omnifix-digital"
+cd "C:\Projetos\OMNIFIX-DIGITAL"
 npm install
 npm run lint
 $env:NODE_OPTIONS='--max-old-space-size=4096'
@@ -90,9 +90,10 @@ npm run build
 
 ## 7. Dominio e HTTPS
 
-- Configurar dominio na Vercel.
-- Validar certificado HTTPS ativo.
-- Configurar redirect de `www` se necessario.
+- Apontar `viatecinfosc.com.br` para o projeto Base44.
+- Manter OmniFix na Vercel em `app.viatecinfosc.com.br`, `sistema.viatecinfosc.com.br` ou `*.vercel.app`.
+- Validar certificado HTTPS ativo no Base44.
+- Validar certificado HTTPS ativo no endpoint OmniFix.
 - Atualizar URLs permitidas no Supabase Auth:
   - `Authentication > URL Configuration > Site URL`
   - `Authentication > URL Configuration > Redirect URLs`
@@ -109,7 +110,7 @@ npm run build
 - Nao expor `service_role`.
 - Revisar policies antes de liberar clientes reais.
 - Criar usuarios individuais, sem compartilhar senha.
-- Usar roles corretas em `profiles`.
+- Usar papeis corretos em `perfis.papel`.
 - Remover registros de teste antes do uso oficial.
 
 ## 10. Go-live

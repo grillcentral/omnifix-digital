@@ -55,8 +55,13 @@ O deploy recomendado usa Vercel:
 - Build command: `npm run build`
 - Output directory: `dist`
 - SPA fallback configurado em `vercel.json`
-- Dominio oficial: `https://viatecinfosc.com.br`
-- Subdominio: `https://www.viatecinfosc.com.br`
+- Dominio principal da Viatec: `https://viatecinfosc.com.br`
+- Destino do dominio principal: Base44 em `https://viatecinformatica.base44.app/`
+- Dominio recomendado para o OmniFix operacional: `https://app.viatecinfosc.com.br`
+- Alternativas para OmniFix: `https://sistema.viatecinfosc.com.br` ou URL `*.vercel.app`
+
+O OmniFix deve continuar hospedado na Vercel, mas separado do dominio principal
+publico que sera apontado para Base44.
 
 Documentacao detalhada:
 
@@ -136,7 +141,7 @@ Mostra:
 ## Validacao local
 
 ```powershell
-cd "C:\Progeto Cardapio digital\omnifix-digital"
+cd "C:\Projetos\OMNIFIX-DIGITAL"
 npm run lint
 $env:NODE_OPTIONS='--max-old-space-size=4096'
 npm run build
@@ -147,11 +152,11 @@ npm run build
 - Supabase production configurado.
 - RLS aplicado.
 - Usuarios Auth criados.
-- Roles em `profiles` ajustadas.
+- Papeis em `perfis.papel` ajustados.
 - Env vars na Vercel.
 - Deploy Vercel pronto.
-- Dominio oficial `viatecinfosc.com.br` configurado.
-- Subdominio `www.viatecinfosc.com.br` configurado.
+- Dominio principal `viatecinfosc.com.br` apontado para Base44.
+- OmniFix configurado em `app.viatecinfosc.com.br`, `sistema.viatecinfosc.com.br` ou `*.vercel.app`.
 - HTTPS ativo.
 - `/status` validado.
 - Login e logout validados.
